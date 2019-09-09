@@ -11,4 +11,3 @@ b.connect()
 # Turn lamp 1 on
 b.set_light(1,'on', True)
 
-# todo:apiで天気予報を取得して表示
