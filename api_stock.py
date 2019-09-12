@@ -39,7 +39,7 @@ class Stock():
     def download(self):
         # 昨日が土日や、祝日でないなら
         if self.yesterday.weekday() > 4 or self.str_yesterday in self.holiday_json:
-            print("営業外:DLできない")
+            print("STOCK:営業外:DLできない")
         else:
             # 昨日のファイルをダウンロード
             year = self.yesterday.strftime('%Y')
@@ -69,7 +69,7 @@ class Stock():
 
         # CSVが3つ以上あるなら、一番古いCSVファイル削除
         if len(self.csv_list) >= 3:
-            print("一番古いCSVを消す")
+            print("STOCK:一番古いCSVを消す")
 
             day_name_list = []
             for i in self.csv_list:
@@ -85,11 +85,11 @@ class Stock():
                 self.csv_list = sorted(glob.glob(self.target_directory + '*.csv'))
 
         elif len(self.csv_list) == 2:
-                print("ちょうどCSVが2つ")
+                print("STOCK:ちょうどCSVが2つ")
         elif len(self.csv_list) == 1:
-            print("CSVが1つだけ")
+            print("STOCK:CSVが1つだけ")
         else:
-            print("エラー:CSVが無い、最初からDLして")
+            print("STOCK:エラー:CSVが無い、最初からDLして")
             # sys.exit()
 
     def get_stock(self):
@@ -107,7 +107,7 @@ class Stock():
             df2 = pd.read_csv(self.csv_list[1], encoding='cp932', header=None)
             prices.append(int(df2.loc[0][7]))
         else:
-            print("dataが無い")
+            print("STOCK:dataが無い")
 
         prices_num = len(prices)
 

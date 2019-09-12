@@ -3,16 +3,15 @@ import config
 
 import api_weather
 import api_train
-# import api_withings
+import api_withings
 import api_stock
 
 import sys
 
 weather = api_weather.Weather()
 weather.download()
-# 「晴れのち曇り」でリターン
-res_weather = weather.get_weather()
-# todo:気温も取る、忘れてた。
+# '晴のち曇'と、 ['30', '30']でリターン
+res_weather, res_temp = weather.get_weather()
 
 train = api_train.Train()
 train.download()
@@ -24,9 +23,16 @@ stock.download()
 # (2, [21318, 21392]) でリターン
 res_stock = stock.get_stock()
 
+withings = api_withings.Withings()
+withings.weight_download()
+withings.step_download()
 
+# (65700, 66000) でリターン
+res_weight = withings.get_weight()
+# (10548, 14260) でリターン
+res_steps = withings.get_steps()
 
-print(res_stock)
+print(res_weather, res_temp)
 sys.exit()
 
 # huebridgeのIPアドレス 固定にしておく
