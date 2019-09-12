@@ -13,6 +13,10 @@ weather.download()
 # '晴のち曇'と、 ['30', '30']でリターン
 res_weather, res_temp = weather.get_weather()
 
+# 雨があるなら0,曇があるなら1,晴のみなら2
+
+
+
 train = api_train.Train()
 train.download()
 # (2, '鹿島線 呉線 ') でリターン
