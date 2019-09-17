@@ -1,11 +1,12 @@
 import urllib.request
 import json
+import config
 
 WEB_SERVICE_URL = "https://tetsudo.rti-giken.jp/free/delay.json"
 SAVE_FILE_NAME = "tmp/delay.json"
 
-#副都心線、田園都市線を検索
-SEARCH_DATA_LABEL = ['田園都市線','副都心線']
+#電車路線を検索
+SEARCH_DATA_LABEL = config.train_lines
 
 def download():
     urllib.request.urlretrieve(WEB_SERVICE_URL, SAVE_FILE_NAME)

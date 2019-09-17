@@ -1,13 +1,14 @@
 import urllib.request
 import json
+import config
 
 class Train():
     def __init__(self):
         self.WEB_SERVICE_URL = "https://tetsudo.rti-giken.jp/free/delay.json"
         self.SAVE_FILE_NAME = "tmp/delay.json"
 
-        #副都心線、田園都市線を検索
-        self.SEARCH_DATA_LABEL = ['田園都市線','副都心線']
+        #路線を検索
+        self.SEARCH_DATA_LABEL = config.train_lines
 
     def download(self):
         urllib.request.urlretrieve(self.WEB_SERVICE_URL, self.SAVE_FILE_NAME)

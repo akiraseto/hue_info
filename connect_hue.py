@@ -6,8 +6,6 @@ import api_train
 import api_withings
 import api_stock
 
-import sys
-
 # 昼光色(6500K)
 daylight = {'on' : True,  "bri": 255, "ct": 153}
 # 赤
@@ -103,12 +101,11 @@ elif res_steps[0] == res_steps[1]:
 else:
     chk_steps = red
 
-# huebridgeのIPアドレス 固定にしておく
 b = Bridge(config.huebridge_ip)
 
 # If the app is not registered and the button is not pressed,
 # press the button and call connect() (this only needs to be run a single time)
-b.connect()
+# b.connect()
 
 # 照明1番:ambient:昼光色
 b.set_light(10, daylight, True)
@@ -128,6 +125,5 @@ b.set_light(6, chk_steps, True)
 for i in 4,5,9:
     b.set_light(i,'on', False)
 
-
-
-sys.exit()
+# apple Homebridgeに追加登録
+# apple Homeautomationに追加、朝にタイマーセットする

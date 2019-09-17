@@ -4,7 +4,6 @@ import os
 import glob
 import zipfile
 import pandas as pd
-import sys
 
 class Stock():
     def __init__(self):
@@ -26,9 +25,6 @@ class Stock():
         # 日付を用意
         today = datetime.date.today()
         self.yesterday = today - datetime.timedelta(1)
-
-        # todo:消す(テスト用)
-        # self.yesterday = datetime.date(2019,9,4)
         self.str_yesterday = self.yesterday.strftime('%Y-%m-%d')
 
         # ファイルの操作場所
@@ -90,7 +86,6 @@ class Stock():
             print("STOCK:CSVが1つだけ")
         else:
             print("STOCK:エラー:CSVが無い、最初からDLして")
-            # sys.exit()
 
     def get_stock(self):
         # csvファイルをpandasに取り込み、株価比較
