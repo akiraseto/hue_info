@@ -40,7 +40,33 @@
     - 一昨日 = 昨日:緑
     - 一昨日 > 昨日:赤
 
-### 体重を取得
+### 照明色設定
+- 赤:"hue": 65535
+- 青:"hue": 46000
+- 緑:"hue": 25000
+- 黄:"hue": 9500
+
+同一パラメーター: "bri": 255, "sat": 255
+昼光色:"ct": 153
+
+## Hue情報
+
+- brightness : level = (int)        - int is from 0 to 255  
+- hue        : level = ('hue:int')  - int is from 0 to 65535
+- saturation : level = ('sat:int')  - int is from 0 to 255  
+- ct         : level = ('ct:int')   - int is from 153 to 500  
+     153 to 500 == 6500K to 2000K  
+     昼光色6500K(153)一番白い  
+- rgb        : level = ('rgb:hex')  - hex is from 000000 to ffffff
+- transition : level = ('tr:int')   - int is from 0 to 3000 in tenths of seconds
+- effect     : level = ('eft:colorloop|none') put bulb in colour loop
+
+### デフォルト
+- color lamp : b:254,h:8418,s:140,(ct:366)
+- ambiance lamp : b:254,ct:366
+
+
+## 体重を取得
 - action: getmeas
 - meastype: 体重の場合は1
 - category: 今回は1

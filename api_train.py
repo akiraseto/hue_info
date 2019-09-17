@@ -7,8 +7,7 @@ class Train():
         self.SAVE_FILE_NAME = "tmp/delay.json"
 
         #副都心線、田園都市線を検索
-        # self.SEARCH_DATA_LABEL = ['田園都市線','副都心線']
-        self.SEARCH_DATA_LABEL = ['鹿島線','呉線']
+        self.SEARCH_DATA_LABEL = ['田園都市線','副都心線']
 
     def download(self):
         urllib.request.urlretrieve(self.WEB_SERVICE_URL, self.SAVE_FILE_NAME)
