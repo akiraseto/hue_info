@@ -1,6 +1,8 @@
 # hue_info
 朝起きたとき、電球色で情報GET！Philips Hueの電球色でお知らせシステム
 
+![livingroom](https://user-images.githubusercontent.com/18400866/67646808-162b4300-f973-11e9-879e-2b3966d0b026.jpeg)
+
 ## 構成
 ライトは6つ
 - 天気（降水確率:晴れ、曇、雨）
